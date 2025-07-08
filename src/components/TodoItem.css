@@ -1,0 +1,264 @@
+.todo-item {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-item:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed {
+  background: #f9fafb;
+  border-color: #d1fae5;
+}
+
+.todo-item.overdue {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.todo-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.priority-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.toggle-button {
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.toggle-button:hover {
+  color: #667eea;
+}
+
+.check-icon {
+  color: #10b981;
+}
+
+.circle-icon {
+  color: #d1d5db;
+}
+
+.todo-text-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.todo-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  padding: 4px 8px;
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+.metadata-item.category {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.metadata-item.due-date {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.metadata-item.due-date.overdue {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.overdue-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.action-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.action-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.edit-button {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.edit-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+.delete-button {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.delete-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.save-button {
+  padding: 8px 12px;
+  background: #10b981;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.save-button:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.cancel-edit-button {
+  padding: 8px 12px;
+  background: #6b7280;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.cancel-edit-button:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .todo-item {
+    padding: 16px;
+  }
+  
+  .todo-content {
+    gap: 12px;
+  }
+  
+  .todo-metadata {
+    gap: 8px;
+  }
+  
+  .metadata-item {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  
+  .action-button {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .todo-actions {
+    align-self: flex-end;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+} 
